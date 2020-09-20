@@ -1,11 +1,13 @@
-import { Module } from '@nestjs/common';
+import { HttpModule, Module } from '@nestjs/common';
 import AppController from './app.controller';
 import AppService from './app.service';
+import EODController from './eod.controller';
+import EODService from './eod.service';
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [HttpModule],
+  controllers: [AppController, EODController],
+  providers: [AppService, EODService],
 })
 class AppModule {}
 
